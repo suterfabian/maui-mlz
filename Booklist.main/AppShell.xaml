@@ -4,11 +4,28 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Booklist.main"
+    xmlns:pages="clr-namespace:Booklist.main.Pages"
+    xmlns:models="clr-namespace:Booklist.main.Models"
     Shell.FlyoutBehavior="Disabled">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <Shell.FlyoutHeader>
+        <Grid HeightRequest="100" BackgroundColor="DarkSlateBlue">
+            <Image Source="moon.png"/>
+        </Grid>
+    </Shell.FlyoutHeader>
 
+    <TabBar>
+        <Tab Title="Bücher"
+            Icon="Images/book.svg">
+            <ShellContent ContentTemplate="{DataTemplate pages:BookListPage}" />
+        </Tab>
+        <Tab Title="Admin"
+            Icon="Images/briefcase.svg">
+            <ShellContent ContentTemplate="{DataTemplate pages:BookAdminPage}" />
+        </Tab>
+        <Tab Title="About"
+            Icon="Images/user.svg">
+            <ShellContent ContentTemplate="{DataTemplate pages:BookAboutPage}" />
+        </Tab>
+    </TabBar>
 </Shell>
