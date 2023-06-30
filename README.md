@@ -4,6 +4,3 @@
 
 Projektarbeit zum Kurs MobileApps
 
-
-
-
