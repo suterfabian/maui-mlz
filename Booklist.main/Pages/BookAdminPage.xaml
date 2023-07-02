@@ -2,13 +2,15 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:models="clr-namespace:Booklist.main.Models"
+             xmlns:viewmodel="clr-namespace:Booklist.main.ViewModels"
              x:Class="Booklist.main.Pages.BookAdminPage"
+             x:DataType="viewmodel:AdminViewModel"
              Title="Bücherliste bearbeiten"
              BackgroundColor="#3e3e3e">
 
-    <CollectionView x:Name="collectionView">
+    <CollectionView x:Name="collectionView" ItemsSource="{Binding Books}">
         <CollectionView.ItemTemplate>
-            <DataTemplate>
+            <DataTemplate x:DataType="models:Book">
                 <Border BackgroundColor="#6e6e6e" Margin="10,10,10,0" StrokeThickness="0">
                     <Grid ColumnDefinitions="60,*,*,100,100" Padding="10" RowDefinitions="auto,auto">
 
@@ -23,7 +25,7 @@
                         <Label Grid.Column="2" Grid.Row="1" Text="{Binding ISBN}" FontSize="12" />
 
                         <Button Grid.Column="3" Grid.RowSpan="2" Text="Löschen" Padding="0,0,0,0" Margin="0,1,10,1" Clicked="OnBtnDeleteClicked" />
-                        <Button Grid.Column="4" Grid.RowSpan="2" Text="Bearbeiten" Padding="0,0,0,0" Margin="0,1,10,1" Clicked="OnBtnEditClicked" />
+                        <Button Grid.Column="4" Grid.RowSpan="2" Text="Bearbeiten" Padding="0,0,0,0" Margin="0,1,10,1"  />
                     </Grid> 
                 </Border>
             </DataTemplate>

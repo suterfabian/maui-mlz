@@ -1,5 +1,6 @@
 ﻿using Booklist.main.Data;
 using Booklist.main.Pages;
+using Booklist.main.ViewModels;
 using Microsoft.Extensions.Logging;
 
 namespace Booklist.main;
@@ -28,8 +29,10 @@ public static class MauiProgram
         builder.Services.AddSingleton<BookDetailPage>();
         builder.Services.AddSingleton<BookRepository>();
         builder.Services.AddSingleton<IDatabase, Database>();
+        builder.Services.AddSingleton<AdminViewModel>();
+        builder.Services.AddSingleton<ListViewModel>();
 
-
+        
 
 
 #if DEBUG

@@ -2,6 +2,7 @@ namespace Booklist.main.Pages;
 
 public partial class BookDetailPage : ContentPage
 {
+
 	public BookDetailPage()
 	{
 		InitializeComponent();

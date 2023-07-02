@@ -26,8 +26,5 @@
         <Tab Title="About" Icon="Images/user.svg">
             <ShellContent ContentTemplate="{DataTemplate pages:BookAboutPage}" />
         </Tab>
-        <!--<Tab Title="Details" Icon="Images/user.svg">
-            <ShellContent ContentTemplate="{DataTemplate pages:BookDetailPage}" />
-        </Tab>-->
     </TabBar>
 </Shell>

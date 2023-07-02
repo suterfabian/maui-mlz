@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:Booklist.main.ViewModels"
              x:Class="Booklist.main.Pages.BookDetailPage"
+             x:DataType="viewmodel:BookViewModel"
              Title="BookDetailPage"
              BackgroundColor="#3e3e3e">
 
@@ -19,20 +21,20 @@
     
         <Button Grid.Row="0" HorizontalOptions="End" Grid.Column="5" Text="Zurück" Clicked="OnBtnBackClicked" WidthRequest="100" />
 
-        <Label Grid.Row="1" Grid.Column="0" Text="Name:" VerticalOptions="Center" />
-        <Entry Grid.Row="1" Grid.Column="1" x:Name="name" />
+        <Label Grid.Row="1" Grid.Column="0" Text="Titel:" VerticalOptions="Center" />
+        <Entry Grid.Row="1" Grid.Column="1" x:Name="title" Text="{Binding Title}" />
 
         <Label Grid.Row="1" Grid.Column="2" Text="Untertitel:" VerticalOptions="Center" />
-        <Entry Grid.Row="1" Grid.Column="3" x:Name="subtitle" />
+        <Entry Grid.Row="1" Grid.Column="3" x:Name="subtitle" Text="{Binding Subtitle}" />
 
         <Label Grid.Row="2" Grid.Column="0" Text="Autor:" VerticalOptions="Center" />
-        <Entry Grid.Row="2" Grid.Column="1" x:Name="author" />
+        <Entry Grid.Row="2" Grid.Column="1" x:Name="author" Text="{Binding Author}" />
 
         <Label Grid.Row="2" Grid.Column="2" Text="ISBN:" VerticalOptions="Center" />
-        <Entry Grid.Row="2" Grid.Column="3" x:Name="isbn" />
+        <Entry Grid.Row="2" Grid.Column="3" x:Name="isbn" Text="{Binding ISBN}" />
 
         <Label Grid.Row="3" Grid.Column="0" Text="Verlag:" VerticalOptions="Center" />
-        <Entry Grid.Row="3" Grid.Column="1" x:Name="publisher" />
+        <Entry Grid.Row="3" Grid.Column="1" x:Name="publisher" Text="{Binding Publisher}" />
 
         <Label Grid.Row="3" Grid.Column="2" Text="Bild:" VerticalOptions="Center" />
         <Entry Grid.Row="3" Grid.Column="3" x:Name="image" />
