@@ -17,17 +17,17 @@
     </Shell.TitleView>
 
     <TabBar>
-        <Tab Title="Bücher"
-            Icon="Images/book.svg">
+        <Tab Title="Bücher" Icon="Images/book.svg">
             <ShellContent ContentTemplate="{DataTemplate pages:BookListPage}" />
         </Tab>
-        <Tab Title="Admin"
-            Icon="Images/briefcase.svg">
+        <Tab Title="Admin" Icon="Images/briefcase.svg">
             <ShellContent ContentTemplate="{DataTemplate pages:BookAdminPage}" />
         </Tab>
-        <Tab Title="About"
-            Icon="Images/user.svg">
+        <Tab Title="About" Icon="Images/user.svg">
             <ShellContent ContentTemplate="{DataTemplate pages:BookAboutPage}" />
         </Tab>
+        <!--<Tab Title="Details" Icon="Images/user.svg">
+            <ShellContent ContentTemplate="{DataTemplate pages:BookDetailPage}" />
+        </Tab>-->
     </TabBar>
 </Shell>

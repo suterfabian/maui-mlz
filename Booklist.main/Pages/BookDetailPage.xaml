@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Booklist.main.Pages.BookAboutPage"
-             Title="Über Bücherliste"
+             x:Class="Booklist.main.Pages.BookDetailPage"
+             Title="BookDetailPage"
              BackgroundColor="#3e3e3e">
-    
     <VerticalStackLayout>
         <Label 
-            Text="About"
+            Text="BookDetailPage"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
 
-        <Button Text="Test"
-                VerticalOptions="Center"
-                HorizontalOptions="Center"
-                Clicked="OnButtonTestClicked" />
-
+        <Button Text="Zurück" Clicked="OnBtnBackClicked" />
     </VerticalStackLayout>
 </ContentPage>

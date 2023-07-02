@@ -16,7 +16,8 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 				fonts.AddFont("fa-regular-400.ttf", "FontAwesome");
-			});
+				fonts.AddFont("fa-solid-900.ttf", "FontAwesomeSolid");
+            });
 
         //string dbPath = FileAccessHelper.GetLocalFilePath(AppDatabase.DbName);
         //builder.Services.AddSingleton<BookRepository>(s => ActivatorUtilities.CreateInstance<BookRepository>(s, dbPath));
@@ -24,6 +25,7 @@ public static class MauiProgram
         builder.Services.AddSingleton<BookAboutPage>();
         builder.Services.AddSingleton<BookAdminPage>();
         builder.Services.AddSingleton<BookListPage>();
+        builder.Services.AddSingleton<BookDetailPage>();
         builder.Services.AddSingleton<BookRepository>();
         builder.Services.AddSingleton<IDatabase, Database>();
 

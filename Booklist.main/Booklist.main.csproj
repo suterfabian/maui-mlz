@@ -49,8 +49,10 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Fonts\fa-regular-400.ttf" />
+	  <None Remove="Resources\Fonts\fa-solid-900.ttf" />
 	  <None Remove="Resources\Images\book.svg" />
 	  <None Remove="Resources\Images\briefcase.svg" />
+	  <None Remove="Resources\Images\buch.png" />
 	  <None Remove="Resources\Images\user.svg" />
 	</ItemGroup>
 
@@ -64,6 +66,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\BookAdminPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\BookDetailPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\BookListPage.xaml">

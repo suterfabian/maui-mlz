@@ -17,4 +17,15 @@ public partial class BookAdminPage : ContentPage
     {
         this.collectionView.ItemsSource = await this.bookRepository.GetAllBooks();
     }
+
+    protected async void OnBtnEditClicked(object sender, EventArgs args)
+    {
+        // await Navigation.PushAsync(new BookDetailPage());
+        await Shell.Current.GoToAsync("details");
+    }
+
+    protected void OnBtnDeleteClicked(object sender, EventArgs args)
+    {
+        string s = string.Empty;
+    }
 }
