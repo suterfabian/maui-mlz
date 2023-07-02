@@ -20,7 +20,9 @@ namespace Booklist.main.ViewModels
 
             this.GetBooksCommand = new Command(async () => await this.GetBooksAsync());
 
-            this.DetailPageCommand = new Command(this.OpenDetailPageCommand);
+            // this.DetailPageCommand = new Command<Book>(this.OpenDetailPageCommand);
+
+            this.DetailPageCommand = new Command<Book>(this.OpenDetailPageCommand); // <Book>
         }
 
         public ObservableCollection<Book> Books { get; } = new();
@@ -37,7 +39,7 @@ namespace Booklist.main.ViewModels
             }
         }
 
-        protected void OpenDetailPageCommand()
+        protected void OpenDetailPageCommand(Book book) // Book book
         {
             // await Navigation.PushAsync(new BookDetailPage());
             //await Shell.Current.GoToAsync("details");
