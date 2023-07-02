@@ -4,17 +4,23 @@
              x:Class="Booklist.main.Pages.BookAboutPage"
              Title="Über Bücherliste"
              BackgroundColor="#3e3e3e">
-    
-    <VerticalStackLayout>
-        <Label 
-            Text="About"
+
+    <Grid ColumnDefinitions="*" RowDefinitions="auto,auto,auto,auto" ColumnSpacing="30" RowSpacing="10" Margin="10,10,10,0">
+
+        <Border Grid.Row="0" Grid.ColumnSpan="5" BackgroundColor="#6e6e6e"  StrokeThickness="0">
+            <Label 
+            FontSize="24"
+            FontAttributes="Bold"
+            Margin="10,0,0,0"
+            Text="Über Bücherliste"
             VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            HorizontalOptions="Start" />
+        </Border>
 
-        <Button Text="Test"
-                VerticalOptions="Center"
-                HorizontalOptions="Center"
-                Clicked="OnButtonTestClicked" />
+        <Button Grid.Row="0" HorizontalOptions="End" Grid.Column="5" Text="Test" Clicked="OnButtonTestClicked" WidthRequest="100" />
 
-    </VerticalStackLayout>
+        <Label Grid.Row="1" Grid.Column="0" Text="Name:" VerticalOptions="Center" />
+
+    </Grid>
+    
 </ContentPage>

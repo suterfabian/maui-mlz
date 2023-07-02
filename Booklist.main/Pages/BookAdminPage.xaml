@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:Booklist.main.Models"
              x:Class="Booklist.main.Pages.BookAdminPage"
              Title="Bücherliste bearbeiten"
              BackgroundColor="#3e3e3e">
@@ -10,9 +11,11 @@
             <DataTemplate>
                 <Border BackgroundColor="#6e6e6e" Margin="10,10,10,0" StrokeThickness="0">
                     <Grid ColumnDefinitions="60,*,*,100,100" Padding="10" RowDefinitions="auto,auto">
-                        
-                        <Image Grid.Column="0" Grid.RowSpan="3" Margin="0,0,10,0" Source="buch.png"></Image>
 
+                        <Border Grid.Column="0" Grid.RowSpan="3" StrokeThickness="0" BackgroundColor="RoyalBlue" Margin="0,0,10,0">
+                            <Label FontSize="32" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontFamily="FontAwesomeSolid" Text="{x:Static models:FontAwesomeSolid.Book}" />
+                        </Border>
+                        
                         <Label Grid.Column="1" Grid.Row="0" Text="{Binding Title}" FontSize="Default" FontAttributes="Bold" />
                         <Label Grid.Column="2" Grid.Row="0" Text="{Binding Author}" FontSize="Default" FontAttributes="Bold"/>
                         

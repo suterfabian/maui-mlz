@@ -19,7 +19,6 @@
                             <Label Text="{Binding Title}" Padding="20,0,0,2" TextColor="#003366" FontSize="Medium" FontAttributes="Bold" />
                         </Border>
 
-                        
                         <Label Grid.Column="2" Grid.Row="0" Text="{Binding Author}" FontSize="Medium" FontAttributes="Bold"/>
                         <Label Grid.Column="3" Grid.Row="0" Text="{Binding Rating}"  Padding="0,3,0,0"/>
                         <Label Grid.Column="1" Grid.Row="1" Text="{Binding Subtitle}" FontSize="12"/>
