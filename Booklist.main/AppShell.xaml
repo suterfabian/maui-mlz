@@ -6,13 +6,15 @@
     xmlns:local="clr-namespace:Booklist.main"
     xmlns:pages="clr-namespace:Booklist.main.Pages"
     xmlns:models="clr-namespace:Booklist.main.Models"
+    x:Name="shellMain"
     Shell.FlyoutBehavior="Disabled">
 
-    <Shell.FlyoutHeader>
-        <Grid HeightRequest="100" BackgroundColor="DarkSlateBlue">
-            <Image Source="moon.png"/>
+    <Shell.TitleView>
+        <Grid BackgroundColor="RoyalBlue" ColumnDefinitions="130, auto" Padding="10">
+            <Label Grid.Column="0" Text="Bücherliste | " VerticalOptions="Center" FontSize="20" FontAttributes="Bold" />
+            <Label Grid.Column="1" x:Name="shellTitelLabel" Text="." VerticalOptions="Center" FontAttributes="Bold" FontSize="20" />
         </Grid>
-    </Shell.FlyoutHeader>
+    </Shell.TitleView>
 
     <TabBar>
         <Tab Title="Bücher"

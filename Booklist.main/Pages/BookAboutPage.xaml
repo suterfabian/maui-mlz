@@ -8,5 +8,11 @@
             Text="About"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+
+        <Button Text="Test"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Clicked="OnButtonTestClicked" />
+
     </VerticalStackLayout>
 </ContentPage>

@@ -1,9 +1,20 @@
+using Booklist.main.Data;
+
 namespace Booklist.main.Pages;
 
 public partial class BookAdminPage : ContentPage
 {
-	public BookAdminPage()
+    private readonly BookRepository bookRepository;
+
+    public BookAdminPage(BookRepository bookRepository)
 	{
-		InitializeComponent();
-	}
+        InitializeComponent();
+
+        this.bookRepository = bookRepository;
+    }
+
+    protected override async void OnAppearing()
+    {
+        this.collectionView.ItemsSource = await this.bookRepository.GetAllBooks();
+    }
 }
