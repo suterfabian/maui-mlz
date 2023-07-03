@@ -8,11 +8,11 @@ namespace Booklist.main.ViewModels
     public class AdminViewModel : BaseViewModel
     {
         private readonly BookRepository bookRepository;
+
         public ICommand DetailPageCommand { get; set; }
 
         public Command GetBooksCommand { get; }
 
-        // public int Id { get; set; }
 
         public AdminViewModel(BookRepository bookRepository) 
         {
@@ -20,9 +20,7 @@ namespace Booklist.main.ViewModels
 
             this.GetBooksCommand = new Command(async () => await this.GetBooksAsync());
 
-            // this.DetailPageCommand = new Command<Book>(this.OpenDetailPageCommand);
-
-            this.DetailPageCommand = new Command<Book>(this.OpenDetailPageCommand); // <Book>
+            this.DetailPageCommand = new Command<Book>(this.OpenDetailPageCommand);
         }
 
         public ObservableCollection<Book> Books { get; } = new();
