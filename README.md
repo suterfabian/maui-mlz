@@ -1,8 +1,8 @@
 # 009_MAUI_MLZ
 
-<img src="https://github.com/suterfabian/maui-mlz-booklist/blob/main/screenshot-01.png?raw=true" width="300">
+<img src="https://github.com/suterfabian/maui-mlz/blob/main/screenshot-01.png?raw=true" width="300">
 
-<img src="https://github.com/suterfabian/maui-mlz-booklist/blob/main/screenshot-02.png?raw=true" width="300">
+<img src="https://github.com/suterfabian/maui-mlz/blob/main/screenshot-02.png?raw=true" width="300">
 
 Projektarbeit zum Kurs MobileApps
 
