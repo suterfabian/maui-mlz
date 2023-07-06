@@ -1,7 +1,7 @@
 ﻿using Booklist.main.Data;
+using System.Windows.Input;
 using Booklist.main.Models;
 using System.Collections.ObjectModel;
-using System.Windows.Input;
 
 namespace Booklist.main.ViewModels
 {
@@ -12,7 +12,6 @@ namespace Booklist.main.ViewModels
         public ICommand DetailPageCommand { get; set; }
 
         public Command GetBooksCommand { get; }
-
 
         public AdminViewModel(BookRepository bookRepository) 
         {
@@ -37,14 +36,17 @@ namespace Booklist.main.ViewModels
             }
         }
 
-        protected void OpenDetailPageCommand(Book book) // Book book
+        protected async void OpenDetailPageCommand(Book book) // Book book
         {
-            // await Navigation.PushAsync(new BookDetailPage());
-            //await Shell.Current.GoToAsync("details");
+            if (book == null)
+                return;
 
-            string s = string.Empty;
+            var navigationParameter = new Dictionary<string, object>()
+            {
+                { "book", book }
+            };
 
-            // return null;
+            await Shell.Current.GoToAsync("details", navigationParameter);
         }
 
         

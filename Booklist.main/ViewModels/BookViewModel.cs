@@ -6,9 +6,19 @@ namespace Booklist.main.ViewModels
     {
         public int Id { get; set; }
 
-        public BookViewModel() { }
+        public BookViewModel() 
+        {
+            this.SetBookProperties(new Book());
+        }
 
         public BookViewModel(Book book)
+        {
+            this.SetBookProperties(book);
+        }
+
+        private readonly BookViewModel bookViewModel;
+
+        private void SetBookProperties(Book book)
         {
             this.Id = book.Id;
             this.title = book.Title;
@@ -108,15 +118,6 @@ namespace Booklist.main.ViewModels
                 this.OnPropertyChanged(nameof(this.ChangeDate));
             }
         }
-
-        
-
-
-
-
-
-
-
 
         //public string ProfileImage => IsFavorite ? "FavoriteProfile" : "NormalProfile";
 

@@ -31,9 +31,7 @@ public static class MauiProgram
         builder.Services.AddSingleton<IDatabase, Database>();
         builder.Services.AddSingleton<AdminViewModel>();
         builder.Services.AddSingleton<ListViewModel>();
-
-        
-
+        builder.Services.AddSingleton<BookViewModel>();
 
 #if DEBUG
         builder.Logging.AddDebug();

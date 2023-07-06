@@ -24,10 +24,13 @@ public partial class BookAdminPage : ContentPage
         await this.adminViewModel.GetBooksAsync();
     }
 
-    protected async void OnBtnEditClicked(object sender, EventArgs args)
+
+    protected void OnBtnEditClicked(object sender, EventArgs args)
     {
         // await Navigation.PushAsync(new BookDetailPage());
         //await Shell.Current.GoToAsync("details");
+
+        //Navigation.PushAsync(new BookDetailPage());
 
         string s = string.Empty;
 
