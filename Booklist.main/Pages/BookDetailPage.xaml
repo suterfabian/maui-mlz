@@ -7,9 +7,9 @@
              Title="BookDetailPage"
              BackgroundColor="#3e3e3e">
 
-    <Grid ColumnDefinitions="70,*,70,*,100" RowDefinitions="auto,auto,auto,auto" ColumnSpacing="30" RowSpacing="10" Margin="10,10,10,0">
+    <Grid ColumnDefinitions="70,*,70,*,100" RowDefinitions="auto,auto,auto,auto,auto" ColumnSpacing="30" RowSpacing="10" Margin="10,10,10,0">
 
-        <Border Grid.Row="0" Grid.ColumnSpan="5" BackgroundColor="#6e6e6e"  StrokeThickness="0">
+        <Border Grid.Row="0" Grid.ColumnSpan="4" BackgroundColor="#6e6e6e"  StrokeThickness="0">
             <Label 
             FontSize="24"
             FontAttributes="Bold"
@@ -39,6 +39,12 @@
         <Label Grid.Row="3" Grid.Column="2" Text="Bild:" VerticalOptions="Center" />
         <Entry Grid.Row="3" Grid.Column="3" x:Name="image" />
 
+        <Grid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4" RowDefinitions="auto" ColumnDefinitions="*,100,100,100">
+            <Button Grid.Row="0" Grid.Column="1" Margin="0,0,40,0" Text="Löschen" Command="{ Binding OnDeleteClickedCommand }" WidthRequest="100" BackgroundColor="Crimson" TextColor="White" />
+            <Button Grid.Row="0" Grid.Column="2" Margin="0,0,20,0" Text="Neu" Command="{ Binding OnNewClickedCommand }" WidthRequest="100" />
+            <Button Grid.Row="0" Grid.Column="3" Margin="0,0,0,0" Text="Speichern" Command="{ Binding OnSaveClickedCommand }" WidthRequest="100" />
+        </Grid>
+        
     </Grid>
 
 </ContentPage>

@@ -35,5 +35,5 @@ public partial class BookDetailPage : ContentPage
     {
         // await Navigation.PushAsync(new BookDetailPage());
         await Shell.Current.GoToAsync("..");
-    }
+    } 
 }

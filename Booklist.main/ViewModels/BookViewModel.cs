@@ -1,14 +1,20 @@
-﻿using Booklist.main.Models;
+﻿using Booklist.main.Data;
+using Booklist.main.Models;
+using System.Windows.Input;
 
 namespace Booklist.main.ViewModels
 {
     public class BookViewModel : BaseViewModel
     {
         public int Id { get; set; }
+        public ICommand OnSaveClickedCommand { get; private set; }
+        public ICommand OnNewClickedCommand { get; private set; }
+        public ICommand OnDeleteClickedCommand { get; private set; }
 
-        public BookViewModel() 
+        public BookViewModel(BookRepository bookRepository)
         {
             this.SetBookProperties(new Book());
+            this.bookRepository = bookRepository;
         }
 
         public BookViewModel(Book book)
@@ -17,6 +23,7 @@ namespace Booklist.main.ViewModels
         }
 
         private readonly BookViewModel bookViewModel;
+        private readonly BookRepository bookRepository;
 
         private void SetBookProperties(Book book)
         {
@@ -29,6 +36,25 @@ namespace Booklist.main.ViewModels
             this.rating = book.Rating;
             this.createDate = book.CreateDate;
             this.changeDate = book.ChangeDate;
+
+            this.OnSaveClickedCommand = new Command(async () => await OnBtnSaveClickedCommand());
+            this.OnNewClickedCommand = new Command(async () => await OnBtnNewClickedCommand());
+            this.OnDeleteClickedCommand = new Command(async () => await OnBtnDeleteClickedCommand());
+        }
+
+        public async Task OnBtnSaveClickedCommand()
+        {
+            string s = string.Empty;
+        }
+
+        public async Task OnBtnNewClickedCommand()
+        {
+            string s = string.Empty;
+        }
+
+        public async Task OnBtnDeleteClickedCommand()
+        {
+            string s = string.Empty;
         }
 
         private string title;
@@ -118,19 +144,5 @@ namespace Booklist.main.ViewModels
                 this.OnPropertyChanged(nameof(this.ChangeDate));
             }
         }
-
-        //public string ProfileImage => IsFavorite ? "FavoriteProfile" : "NormalProfile";
-
-        //public ImageSource ProfileImage
-        //{
-        //    get
-        //    {
-        //        if (IsFavorite)
-        //        {
-        //            return ImageSource.FromResource("ContactsBook.Assets.Images.FavoriteProfile.png");
-        //        }
-        //        return ImageSource.FromResource("ContactsBook.Assets.Images.NormalProfile.png");
-        //    }
-        //}
     }
 }
