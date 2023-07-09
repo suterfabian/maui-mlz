@@ -14,6 +14,15 @@ OR-Mapper: sqlite-net-pcl
 [Website ](https://github.com/praeclarum/sqlite-net)
 [Dokumentation](https://github.com/praeclarum/sqlite-net/wiki)
 
+## Seitenaufbau
+
+<img src="https://github.com/suterfabian/maui-mlz/blob/main/Seitenaufbau.png?raw=true" width="300">
+
+## Applikationsübersicht
+
+<img src="https://github.com/suterfabian/maui-mlz/blob/main/Uebersicht.png?raw=true" width="300">
+
+
 
 
 
