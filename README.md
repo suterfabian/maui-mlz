@@ -15,7 +15,7 @@ OR-Mapper: sqlite-net-pcl
 [Dokumentation](https://github.com/praeclarum/sqlite-net/wiki)
 
 Die Datenbank ist im Benutzer/Dokumente-Verzeichnis (mindestens in Windows)  
-C:\Users\[USER]\Documents\books.db
+C:\Users\\[USER]\Documents\books.db
 
 
 ## Seitenaufbau
