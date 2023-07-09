@@ -5,9 +5,9 @@
              Title="Über Bücherliste"
              BackgroundColor="#3e3e3e">
 
-    <Grid ColumnDefinitions="*" RowDefinitions="auto,auto,auto,auto" ColumnSpacing="30" RowSpacing="10" Margin="10,10,10,0">
+    <Grid ColumnDefinitions="*" RowDefinitions="auto,auto,auto,auto" RowSpacing="10" Margin="10,10,10,0">
 
-        <Border Grid.Row="0" Grid.ColumnSpan="5" BackgroundColor="#6e6e6e"  StrokeThickness="0">
+        <Border Grid.Row="0" Grid.Column="0" BackgroundColor="#6e6e6e"  StrokeThickness="0" Padding="4">
             <Label 
             FontSize="24"
             FontAttributes="Bold"
@@ -17,9 +17,7 @@
             HorizontalOptions="Start" />
         </Border>
 
-        <Button Grid.Row="0" HorizontalOptions="End" Grid.Column="5" Text="Test" Clicked="OnButtonTestClicked" WidthRequest="100" />
-
-        <Label Grid.Row="1" Grid.Column="0" Text="Name:" VerticalOptions="Center" />
+        <Label Grid.Row="1" Grid.Column="0" x:Name="contentText" VerticalOptions="Center" />
 
     </Grid>
     

@@ -32,7 +32,8 @@ namespace Booklist.main.Data
                 if (book == null)
                     throw new Exception("Valid name required");
 
-                result = await this.connection.InsertAsync(book);
+                if(book.Id == 0) result = await this.connection.InsertAsync(book);
+                else result = await this.connection.UpdateAsync(book);
 
                 StatusMessage = string.Format("Das Buch \"{0}\" wurde gespeichert.", book.Title);
             }

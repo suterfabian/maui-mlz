@@ -26,14 +26,15 @@ public partial class BookDetailPage : ContentPage
 
             this.bookToDisplay = value;
 
-            if (this.bookToDisplay != null)
-                BindingContext = new BookViewModel(this.bookToDisplay);
+            this.bookViewModel.SetBookProperties(value);
+
+            //if (this.bookToDisplay != null)
+            //    BindingContext = new BookViewModel(this.bookToDisplay);
         }
     }
 
     protected async void OnBtnBackClicked(object sender, EventArgs args)
     {
-        // await Navigation.PushAsync(new BookDetailPage());
         await Shell.Current.GoToAsync("..");
     } 
 }

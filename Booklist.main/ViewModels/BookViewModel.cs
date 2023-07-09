@@ -11,45 +11,84 @@ namespace Booklist.main.ViewModels
         public ICommand OnNewClickedCommand { get; private set; }
         public ICommand OnDeleteClickedCommand { get; private set; }
 
-        public BookViewModel(BookRepository bookRepository)
-        {
-            this.SetBookProperties(new Book());
-            this.bookRepository = bookRepository;
-        }
-
-        public BookViewModel(Book book)
-        {
-            this.SetBookProperties(book);
-        }
-
-        private readonly BookViewModel bookViewModel;
         private readonly BookRepository bookRepository;
 
-        private void SetBookProperties(Book book)
+        public BookViewModel(BookRepository bookRepository)
         {
-            this.Id = book.Id;
-            this.title = book.Title;
-            this.subtitle = book.Subtitle;
-            this.author = book.Author;
-            this.isbn = book.ISBN;
-            this.publisher = book.Publisher;
-            this.rating = book.Rating;
-            this.createDate = book.CreateDate;
-            this.changeDate = book.ChangeDate;
+            this.bookRepository = bookRepository;
 
             this.OnSaveClickedCommand = new Command(async () => await OnBtnSaveClickedCommand());
             this.OnNewClickedCommand = new Command(async () => await OnBtnNewClickedCommand());
             this.OnDeleteClickedCommand = new Command(async () => await OnBtnDeleteClickedCommand());
+            
+            this.SetBookProperties(new Book());
+        }
+
+        //public BookViewModel(Book book)
+        //{
+        //    this.SetBookProperties(book);
+
+        //    this.OnSaveClickedCommand = new Command(async () => await OnBtnSaveClickedCommand());
+        //    this.OnNewClickedCommand = new Command(async () => await OnBtnNewClickedCommand());
+        //    this.OnDeleteClickedCommand = new Command(async () => await OnBtnDeleteClickedCommand());
+        //}
+
+        public void SetBookProperties(Book book)
+        {
+            this.Id = book.Id;
+            this.Title = book.Title;
+            this.Subtitle = book.Subtitle;
+            this.Author = book.Author;
+            this.ISBN = book.ISBN;
+            this.Publisher = book.Publisher;
+            this.Rating = book.Rating;
+            this.CreateDate = book.CreateDate;
+            this.ChangeDate = book.ChangeDate;
+        }
+
+        private Book GetBookWithProperties()
+        {
+            Book book = new Book
+            {
+                Id = this.Id,
+                Title = this.title,
+                Subtitle = this.subtitle,
+                Author = this.author,
+                ISBN = this.isbn,
+                Publisher = this.publisher,
+                Rating = this.rating,
+                CreateDate = this.createDate,
+                ChangeDate = this.changeDate
+            };
+
+            return book;
         }
 
         public async Task OnBtnSaveClickedCommand()
         {
-            string s = string.Empty;
+            Book book = this.GetBookWithProperties();
+
+            this.bookRepository.SaveBook(book);
         }
 
         public async Task OnBtnNewClickedCommand()
         {
-            string s = string.Empty;
+            DateTime now = DateTime.Now;
+
+            Book newBook = new Book
+            {
+                Id = 0,
+                Title = string.Empty,
+                Subtitle = string.Empty,
+                Author = string.Empty,
+                ISBN = string.Empty,
+                Publisher = string.Empty,
+                Rating = 0,
+                CreateDate = now,
+                ChangeDate = now
+            };
+
+            this.SetBookProperties(newBook);
         }
 
         public async Task OnBtnDeleteClickedCommand()
