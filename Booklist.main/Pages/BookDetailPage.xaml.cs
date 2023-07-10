@@ -12,6 +12,8 @@ public partial class BookDetailPage : ContentPage
 	{
 		InitializeComponent();
 
+        BindingContext = bookViewModel;
+
         this.bookViewModel = bookViewModel;
     }
 
