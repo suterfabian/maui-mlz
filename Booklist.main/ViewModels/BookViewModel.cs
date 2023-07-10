@@ -1,5 +1,6 @@
 ﻿using Booklist.main.Data;
 using Booklist.main.Models;
+using Booklist.main.Services;
 using System.Windows.Input;
 
 namespace Booklist.main.ViewModels
@@ -23,15 +24,6 @@ namespace Booklist.main.ViewModels
             
             this.SetBookProperties(new Book());
         }
-
-        //public BookViewModel(Book book)
-        //{
-        //    this.SetBookProperties(book);
-
-        //    this.OnSaveClickedCommand = new Command(async () => await OnBtnSaveClickedCommand());
-        //    this.OnNewClickedCommand = new Command(async () => await OnBtnNewClickedCommand());
-        //    this.OnDeleteClickedCommand = new Command(async () => await OnBtnDeleteClickedCommand());
-        //}
 
         public void SetBookProperties(Book book)
         {
@@ -69,6 +61,10 @@ namespace Booklist.main.ViewModels
             Book book = this.GetBookWithProperties();
 
             this.bookRepository.SaveBook(book);
+
+            
+
+            string s = string.Empty;
         }
 
         public async Task OnBtnNewClickedCommand()
@@ -93,6 +89,13 @@ namespace Booklist.main.ViewModels
 
         public async Task OnBtnDeleteClickedCommand()
         {
+            bool result = await DialogService.ConfirmAsync("Wollen Sie dieses Element wirklich löschen?");
+
+            if (result)
+            {
+
+            }
+
             string s = string.Empty;
         }
 
