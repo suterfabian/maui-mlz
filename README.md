@@ -26,3 +26,19 @@ C:\Users\\[USER]\Documents\books.db
 
 <img src="https://github.com/suterfabian/maui-mlz/blob/main/Uebersicht.png?raw=true" width="300">
 
+## Mögliche Erweiterungen
+- adäquates Testing
+- Log-Service
+- Login und Benutzerverwaltung für mehrere Benutzer
+- Suche in Bücherliste
+- Externe Abfrage von ISB-Nummer (HttpClient-Aufruf)
+- Server-Api und Speichern der Daten in der Cloud
+- Werbebanner implementieren (möglichst alles zukleistern) ;-)
+- Push-Nachrichten, um den Benutzer zu stressen ;-)
+- Bücher markieren -> 
+	- Wunsch Kauf (soll noch erworben werden)
+	- Wunsch Bibliothek (soll nur gelesen werden, aber nicht gekauft)
+	- Vorhanden (muss im eigenen Chaos zu finden sein)
+	- Gelesen (Buch gelesen, aber schon wieder entsorgt)
+- Bilder des Buchumschlags anzeigen
+
