@@ -8,6 +8,8 @@ Projektarbeit zum Kurs MobileApps
 
 ## Datenbank
 
+ACHTUNG: Eine Demo-DB kann unter folgendem Pfad gefunden werden: ./DemoDB/books.db
+
 Engine: Sqlite
 
 OR-Mapper: sqlite-net-pcl
