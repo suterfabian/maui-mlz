@@ -1,7 +1,7 @@
 ﻿using Booklist.main.Data;
 using Booklist.main.Models;
-using Booklist.main.Services;
 using System.Windows.Input;
+using Booklist.main.Services;
 
 namespace Booklist.main.ViewModels
 {
@@ -56,16 +56,32 @@ namespace Booklist.main.ViewModels
             return book;
         }
 
+        private bool VerifyBook()
+        {
+            if (string.IsNullOrEmpty(this.Title)) 
+            {
+                this.ShowAlert("Bitte geben Sie einen Titel ein!");
+                return false;
+            }
+            else if (string.IsNullOrEmpty(this.Author))
+            {
+                this.ShowAlert("Bitte geben Sie einen Autor ein!");
+                return false;
+            }
+
+            return true;
+        }
+
         public async Task OnBtnSaveClickedCommand()
         {
+            if (!this.VerifyBook()) return;
+
             Book book = this.GetBookWithProperties();
 
             bool saveResult = await this.bookRepository.SaveBook(book);
 
             if (saveResult) await Shell.Current.GoToAsync("..");
             else DialogService.AlertAsync(this.bookRepository.StatusMessage);
-
-            string s = string.Empty;
         }
 
         public async Task OnBtnNewClickedCommand()
@@ -187,6 +203,11 @@ namespace Booklist.main.ViewModels
                 this.SetValue(ref this.changeDate, value);
                 this.OnPropertyChanged(nameof(this.ChangeDate));
             }
+        }
+
+        private void ShowAlert(string msg)
+        {
+            DialogService.AlertAsync(msg);
         }
     }
 }
