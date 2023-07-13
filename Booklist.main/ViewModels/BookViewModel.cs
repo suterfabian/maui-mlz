@@ -60,9 +60,10 @@ namespace Booklist.main.ViewModels
         {
             Book book = this.GetBookWithProperties();
 
-            this.bookRepository.SaveBook(book);
+            bool saveResult = await this.bookRepository.SaveBook(book);
 
-            
+            if (saveResult) await Shell.Current.GoToAsync("..");
+            else DialogService.AlertAsync(this.bookRepository.StatusMessage);
 
             string s = string.Empty;
         }
@@ -93,10 +94,11 @@ namespace Booklist.main.ViewModels
 
             if (result)
             {
+                bool saveResult = await this.bookRepository.DeleteBook(this.GetBookWithProperties());
 
+                if (saveResult) await Shell.Current.GoToAsync("..");
+                else DialogService.AlertAsync("Beim Speichern des Buches ist ein Fehler aufgetreten!");
             }
-
-            string s = string.Empty;
         }
 
         private string title;
