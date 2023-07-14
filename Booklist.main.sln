@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31611.283
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Booklist.main", "Booklist.main\Booklist.main.csproj", "{AF115B9D-6C53-4A4B-B385-DEB7E758671C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booklist.test", "Booklist.test\Booklist.test.csproj", "{8B2EDC13-E20E-4E75-8536-EEFD8D8AEF44}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +19,10 @@ Global
 		{AF115B9D-6C53-4A4B-B385-DEB7E758671C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF115B9D-6C53-4A4B-B385-DEB7E758671C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AF115B9D-6C53-4A4B-B385-DEB7E758671C}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{8B2EDC13-E20E-4E75-8536-EEFD8D8AEF44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B2EDC13-E20E-4E75-8536-EEFD8D8AEF44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B2EDC13-E20E-4E75-8536-EEFD8D8AEF44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B2EDC13-E20E-4E75-8536-EEFD8D8AEF44}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
